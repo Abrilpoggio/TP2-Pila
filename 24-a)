@@ -1,0 +1,13 @@
+
+
+pila = Pila()
+pila.apilar(('Iron Man', 10))
+pila.apilar(('Thor', 8))
+pila.apilar(('Rocket Raccoon', 4))
+pila.apilar(('Groot', 4))
+pila.apilar(('Black Widow', 7))
+
+posicion_rocket = posicion_personaje(pila, 'Rocket Raccoon')
+posicion_groot = posicion_personaje(pila, 'Groot')
+print(f'Rocket Raccoon está en la posición: {posicion_rocket}')
+print(f'Groot está en la posición: {posicion_groot}')
