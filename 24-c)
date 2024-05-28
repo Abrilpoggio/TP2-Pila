@@ -1,0 +1,29 @@
+def peliculas_viuda_negra(pila):
+    pila_aux = Pila()
+    cantidad_peliculas = 0
+    encontrado = False
+    
+    while not pila.esta_vacia():
+        personaje = pila.desapilar()
+        pila_aux.apilar(personaje)
+        if personaje[0] == 'Black Widow':
+            cantidad_peliculas = personaje[1]
+            encontrado = True
+
+    while not pila_aux.esta_vacia():
+        pila.apilar(pila_aux.desapilar())
+    
+    if encontrado:
+        return cantidad_peliculas
+    else:
+        return 'Black Widow no se encontró en la pila'
+
+pila = Pila()
+pila.apilar(('Iron Man', 10))
+pila.apilar(('Thor', 8))
+pila.apilar(('Rocket Raccoon', 4))
+pila.apilar(('Groot', 4))
+pila.apilar(('Black Widow', 7))
+
+peliculas_bw = peliculas_viuda_negra(pila)
+print(f'Black Widow participó en {peliculas_bw} películas')
