@@ -1,0 +1,6 @@
+stack_episode_v = ["Luke", "Leia", "Han", "Chewbacca", "Darth Vader", "Yoda", "Lando"]
+stack_episode_vii = ["Rey", "Finn", "Poe", "Han", "Leia", "Chewbacca", "Kylo Ren", "Luke"]
+
+intersection_stack = (stack_episode_v, stack_episode_vii)
+
+print("Personajes que aparecen en ambos episodios:", intersection_stack)
