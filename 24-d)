@@ -1,0 +1,26 @@
+def personajes_iniciales(pila, iniciales):
+    pila_aux = Pila()
+    personajes = []
+    
+    while not pila.esta_vacia():
+        personaje = pila.desapilar()
+        pila_aux.apilar(personaje)
+        if personaje[0][0] in iniciales:
+            personajes.append(personaje)
+
+ 
+    while not pila_aux.esta_vacia():
+        pila.apilar(pila_aux.desapilar())
+    
+    return personajes
+
+pila = Pila()
+pila.apilar(('Iron Man', 10))
+pila.apilar(('Captain America', 9))
+pila.apilar(('Doctor Strange', 5))
+pila.apilar(('Groot', 4))
+pila.apilar(('Black Widow', 7))
+
+personajes_con_iniciales = personajes_iniciales(pila, {'C', 'D', 'G'})
+for personaje in personajes_con_iniciales:
+    print(f'{personaje[0]} participó en {personaje[1]} películas')
