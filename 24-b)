@@ -1,0 +1,26 @@
+def personajes_mas_de_cinco_peliculas(pila):
+    pila_aux = Pila()
+    personajes = []
+    
+    while not pila.esta_vacia():
+        personaje = pila.desapilar()
+        pila_aux.apilar(personaje)
+        if personaje[1] > 5:
+            personajes.append(personaje)
+
+  
+    while not pila_aux.esta_vacia():
+        pila.apilar(pila_aux.desapilar())
+    
+    return personajes
+
+pila = Pila()
+pila.apilar(('Iron Man', 10))
+pila.apilar(('Thor', 8))
+pila.apilar(('Rocket Raccoon', 4))
+pila.apilar(('Groot', 4))
+pila.apilar(('Black Widow', 7))
+
+personajes = personajes_mas_de_cinco_peliculas(pila)
+for personaje in personajes:
+    print(f'{personaje[0]} participó en {personaje[1]} películas')
